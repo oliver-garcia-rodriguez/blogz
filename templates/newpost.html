@@ -1,17 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>{{title}}</h1>
+<h1>New Post</h1>
 <form method='post'>
     <label>
-        Title for your new blog:
+        Title
         <input type="text" name='title' />
-    </label>
-    <p>{{title_error}}</p>
+    </label><br>
     <label>
-        Your new blog:
+        Post
         <textarea name="body"></textarea>
-    </label>
-    <p>{{body_error}}</p>
-    <input type="submit" value='Add Entry' />
+    </label><br>
+    <input type="submit" value='Submit Query' />
 </form>
+{% if title_error == True or body_error == True %}
+<p>We need both a title and a body!</p>
+{% endif %}
 {% endblock %}
